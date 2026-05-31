@@ -361,31 +361,37 @@ function renderProjects() {
   projectsToShow.forEach((proj, index) => {
     // Add staggered animation delay
     const delay = index * 0.1;
-    html += \`
-      <div class="proj-showcase-card reveal active" id="card-\${proj.id}" role="listitem" style="transition-delay: \${delay}s;">
+    const pId = proj.id || `unknown-${index}`;
+    const pTitle = proj.title || 'Untitled Project';
+    const pBlurb = proj.blurb || 'No description available.';
+    const pImage = proj.image || './assets/profile-pic.png';
+    const pGithub = proj.github || '#';
+
+    html += `
+      <div class="proj-showcase-card reveal active" id="card-${pId}" role="listitem" style="transition-delay: ${delay}s;">
         <div class="proj-card-img-wrap">
-          <img src="\${proj.image}" alt="\${proj.title}" class="proj-card-img" loading="lazy" />
+          <img src="${pImage}" alt="${pTitle}" class="proj-card-img" loading="lazy" />
           <div class="proj-card-overlay"></div>
         </div>
         <div class="proj-card-body">
-          <h3 class="proj-card-title">\${proj.title}</h3>
-          <p class="proj-card-blurb">\${proj.blurb}</p>
+          <h3 class="proj-card-title">${pTitle}</h3>
+          <p class="proj-card-blurb">${pBlurb}</p>
           <div class="proj-card-actions">
-            <button class="btn-proj-details" onclick="openProjectModal('\${proj.id}')" aria-label="View details of \${proj.title}">
+            <button class="btn-proj-details" onclick="openProjectModal('${pId}')" aria-label="View details of ${pTitle}">
               View Project
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
-            <a href="\${proj.github}" target="_blank" rel="noopener noreferrer" class="btn-proj-gh" aria-label="GitHub repository">
+            <a href="${pGithub}" target="_blank" rel="noopener noreferrer" class="btn-proj-gh" aria-label="GitHub repository">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
-            \${proj.demo ? \`
-            <a href="\${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn-proj-gh" aria-label="Live Demo">
+            ${proj.demo ? `
+            <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn-proj-gh" aria-label="Live Demo">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>\` : ''}
+            </a>` : ''}
           </div>
         </div>
       </div>
-    \`;
+    `;
   });
   
   grid.innerHTML = html;
@@ -398,16 +404,26 @@ function openProjectModal(id) {
   const content = document.getElementById("modal-project-content");
   if (!content) return;
 
-  const featuresHTML = proj.features.map(f => \`<li>\${f}</li>\`).join("");
-  const toolsHTML = proj.tools.map(t => \`<span class="tag">\${t}</span>\`).join("");
+  const safeFeatures = proj.features || [];
+  const safeTools = proj.tools || [];
+  const featuresHTML = safeFeatures.map(f => `<li>${f}</li>`).join("");
+  const toolsHTML = safeTools.map(t => `<span class="tag">${t}</span>`).join("");
 
-  content.innerHTML = \`
+  const pTitle = proj.title || 'Untitled Project';
+  const pImage = proj.image || './assets/profile-pic.png';
+  const pWhyBuilt = proj.whyBuilt || 'Details coming soon.';
+  const pProblemSolved = proj.problemSolved || 'Details coming soon.';
+  const pBiggestChallenge = proj.biggestChallenge || 'Details coming soon.';
+  const pLearnings = proj.learnings || 'Details coming soon.';
+  const pGithub = proj.github || '#';
+
+  content.innerHTML = `
     <div class="modal-header">
-      <h3 class="modal-title">\${proj.title}</h3>
+      <h3 class="modal-title">${pTitle}</h3>
     </div>
     
     <div class="modal-image-wrap">
-      <img src="\${proj.image}" alt="\${proj.title} project screenshot" class="modal-img" />
+      <img src="${pImage}" alt="${pTitle} project screenshot" class="modal-img" />
     </div>
     
     <div class="modal-body-grid">
@@ -417,7 +433,7 @@ function openProjectModal(id) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
             Why I Built This
           </h4>
-          <p class="modal-sec-text">\${proj.whyBuilt}</p>
+          <p class="modal-sec-text">${pWhyBuilt}</p>
         </div>
         
         <div class="modal-sec">
@@ -425,7 +441,7 @@ function openProjectModal(id) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             What Problem I Solved
           </h4>
-          <p class="modal-sec-text">\${proj.problemSolved}</p>
+          <p class="modal-sec-text">${pProblemSolved}</p>
         </div>
         
         <div class="modal-sec">
@@ -433,7 +449,7 @@ function openProjectModal(id) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
             Biggest Challenge
           </h4>
-          <p class="modal-sec-text">\${proj.biggestChallenge}</p>
+          <p class="modal-sec-text">${pBiggestChallenge}</p>
         </div>
         
         <div class="modal-sec">
@@ -441,7 +457,7 @@ function openProjectModal(id) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.59-5.59A2 2 0 1 1 19 12H2"></path></svg>
             What I Learned
           </h4>
-          <p class="modal-sec-text">\${proj.learnings}</p>
+          <p class="modal-sec-text">${pLearnings}</p>
         </div>
       </div>
       
@@ -449,31 +465,31 @@ function openProjectModal(id) {
         <div class="modal-sec">
           <h4 class="modal-sec-title">Technologies Used</h4>
           <div class="modal-tag-group">
-            \${toolsHTML}
+            ${toolsHTML}
           </div>
         </div>
         
         <div class="modal-sec">
           <h4 class="modal-sec-title">Key Features</h4>
           <ul class="modal-features-list">
-            \${featuresHTML}
+            ${featuresHTML}
           </ul>
         </div>
         
         <div class="modal-actions">
-          <a href="\${proj.github}" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-gh" id="modal-gh-link">
+          <a href="${pGithub}" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-gh" id="modal-gh-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             GitHub Repository
           </a>
-          \${proj.demo ? \`
-          <a href="\${proj.demo}" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-gh" id="modal-demo-link">
+          ${proj.demo ? `
+          <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-gh" id="modal-demo-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             Live Demo
-          </a>\` : ''}
+          </a>` : ''}
         </div>
       </div>
     </div>
-  \`;
+  `;
 
   const modal = document.getElementById("project-modal");
   modal.classList.add("active");
