@@ -154,41 +154,41 @@ function submitForm(e) {
   const msg = document.getElementById("form-msg");
   const form = e.target;
 
-  btn.disabled   = true;
-  btn.textContent = "Sending…";
+  btn.disabled = true;
+  btn.textContent = "Sending...";
 
-  // ── Uncomment & swap YOUR_ID when you sign up at formspree.io ──
-  // fetch("https://formspree.io/f/YOUR_ID", {
-  //   method: "POST",
-  //   body: new FormData(form),
-  //   headers: { Accept: "application/json" },
-  // })
-  // .then(r => r.ok ? ok() : fail())
-  // .catch(fail);
-
-  // Demo — remove this block once Formspree is connected:
-  setTimeout(ok, 900);
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { Accept: "application/json" },
+  })
+  .then(r => r.ok ? ok() : fail())
+  .catch(fail);
 
   function ok() {
     form.reset();
-    btn.textContent    = "Sent ✓";
+    btn.textContent = "Sent ✓";
     btn.style.background = "linear-gradient(135deg,#22c55e,#16a34a)";
-    btn.style.boxShadow  = "0 4px 18px rgba(34,197,94,.25)";
-    if (msg) { msg.hidden = false; msg.textContent = "Got it — I'll reply soon."; }
+    btn.style.boxShadow = "0 4px 18px rgba(34,197,94,.25)";
+    if (msg) { 
+      msg.hidden = false; 
+      msg.style.color = "var(--t2)";
+      msg.textContent = "Message sent successfully. I'll get back to you soon."; 
+    }
     setTimeout(() => {
-      btn.textContent    = "Send message";
+      btn.textContent = "Send message";
       btn.style.background = "";
-      btn.style.boxShadow  = "";
-      btn.disabled       = false;
+      btn.style.boxShadow = "";
+      btn.disabled = false;
       if (msg) msg.hidden = true;
     }, 5000);
   }
 
   function fail() {
     btn.textContent = "Try again";
-    btn.disabled    = false;
+    btn.disabled = false;
     if (msg) {
-      msg.hidden      = false;
+      msg.hidden = false;
       msg.style.color = "#f87171";
       msg.textContent = "Something went wrong. Email me directly instead.";
     }
