@@ -1,0 +1,1262 @@
+diff --git a/index.html b/index.html
+index 021c1b7..ce1b622 100644
+--- a/index.html
++++ b/index.html
+@@ -1,509 +1,833 @@
+ <!DOCTYPE html>
+ <html lang="en">
+-
+ <head>
+   <meta charset="UTF-8" />
+-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Jitendra Babu | Software Developer & AI/ML Engineer</title>
+-  <meta name="description" content="Jitendra Babu — Final-year B.Tech CSE (AI & ML) student and aspiring software developer. Explore projects in AI, web development, and data analytics." />
+-  <meta name="keywords" content="Jitendra Babu, Software Developer, AI ML Engineer, Web Developer, Python, JavaScript, Portfolio, Power BI, Data Analytics" />
++  <title>Jitendra Babu — B.Tech CSE (AI & ML)</title>
++  <meta name="description" content="Mudde Jitendra Babu — B.Tech CSE (AI & ML) student at batch 2023–2027. Built data analysis projects on IPL, retail, and airline datasets. Completed internship at Labmentix." />
+   <meta name="author" content="Jitendra Babu" />
+-  <meta property="og:title" content="Jitendra Babu | Software Developer & AI/ML Engineer" />
+-  <meta property="og:description" content="Portfolio of Jitendra Babu — AI/ML Engineer, Web Developer, and Data Analytics enthusiast." />
++  <meta property="og:title" content="Mudde Jitendra Babu — CSE Student & Developer" />
++  <meta property="og:description" content="B.Tech CSE (AI & ML) student. Projects in data analysis, Python automation, and ML. Labmentix intern." />
+   <meta property="og:image" content="./assets/profile-pic.png" />
+-  <meta property="og:type" content="website" />
+   <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="mediaqueries.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
++  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cal+Sans&display=swap" rel="stylesheet" />
++  <!-- Cal Sans fallback if not available -->
++  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+ </head>
+-
+ <body>
+ 
+-  <!-- ========== NAVIGATION ========== -->
+-  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+-    <div class="nav-inner">
+-      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Home">
+-        <span class="logo-bracket">&lt;</span>JB<span class="logo-bracket">/&gt;</span>
+-      </a>
+-      <ul class="nav-links" id="nav-links-list" role="list">
+-        <li><a href="#about" id="nav-about">About</a></li>
+-        <li><a href="#skills" id="nav-skills">Skills</a></li>
+-        <li><a href="#experience" id="nav-experience">Experience</a></li>
+-        <li><a href="#projects" id="nav-projects">Projects</a></li>
+-        <li><a href="#contact" id="nav-contact">Contact</a></li>
+-      </ul>
+-      <a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume-btn" id="nav-resume-btn" aria-label="Download Resume">Resume ↗</a>
+-      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMobileMenu()">
+-        <span></span>
+-        <span></span>
+-        <span></span>
+-      </button>
+-    </div>
+-    <!-- Mobile Menu -->
+-    <div class="mobile-menu" id="mobile-menu" role="menu" aria-hidden="true">
+-      <ul role="list">
+-        <li><a href="#about" onclick="toggleMobileMenu()" role="menuitem">About</a></li>
+-        <li><a href="#skills" onclick="toggleMobileMenu()" role="menuitem">Skills</a></li>
+-        <li><a href="#experience" onclick="toggleMobileMenu()" role="menuitem">Experience</a></li>
+-        <li><a href="#projects" onclick="toggleMobileMenu()" role="menuitem">Projects</a></li>
+-        <li><a href="#contact" onclick="toggleMobileMenu()" role="menuitem">Contact</a></li>
+-        <li><a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">Download Resume</a></li>
+-      </ul>
+-    </div>
+-  </nav>
+-
+-  <!-- ========== HERO SECTION ========== -->
+-  <section id="hero" aria-label="Introduction">
+-    <div class="hero-bg-glow" aria-hidden="true"></div>
+-    <div class="hero-particles" aria-hidden="true" id="hero-particles"></div>
+-    <div class="hero-content">
+-      <div class="hero-badge" id="hero-badge">
+-        <span class="badge-dot"></span>
+-        Available for Opportunities
+-      </div>
+-      <p class="hero-greeting">Hello, I'm</p>
+-      <h1 class="hero-name" id="hero-name">Jitendra Babu</h1>
+-      <div class="hero-tagline" aria-label="Role">
+-        <span class="tagline-prefix">I build</span>
+-        <span class="typed-text" id="typed-text" aria-live="polite"></span>
+-        <span class="typed-cursor" aria-hidden="true">|</span>
++<!-- =========================================================
++     NAV
++========================================================= -->
++<nav id="nav" role="navigation" aria-label="Site navigation">
++  <div class="nav-wrap">
++    <a href="#top" class="nav-brand" aria-label="Jitendra Babu — home">
++      Jitendra<span class="brand-dot">.</span>
++    </a>
++
++    <ul class="nav-list" role="list">
++      <li><a href="#about"      class="nav-link" id="nl-about">About</a></li>
++      <li><a href="#skills"     class="nav-link" id="nl-skills">Skills</a></li>
++      <li><a href="#experience" class="nav-link" id="nl-exp">Experience</a></li>
++      <li><a href="#projects"   class="nav-link" id="nl-proj">Projects</a></li>
++      <li><a href="#contact"    class="nav-link" id="nl-contact">Contact</a></li>
++    </ul>
++
++    <a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer"
++       class="nav-cta" id="nav-resume">Resume ↗</a>
++
++    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false"
++            onclick="toggleNav()">
++      <span></span><span></span><span></span>
++    </button>
++  </div>
++
++  <div id="nav-drawer" class="nav-drawer" aria-hidden="true">
++    <ul role="list">
++      <li><a href="#about"      onclick="toggleNav()">About</a></li>
++      <li><a href="#skills"     onclick="toggleNav()">Skills</a></li>
++      <li><a href="#experience" onclick="toggleNav()">Experience</a></li>
++      <li><a href="#projects"   onclick="toggleNav()">Projects</a></li>
++      <li><a href="#contact"    onclick="toggleNav()">Contact</a></li>
++      <li><a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a></li>
++    </ul>
++  </div>
++</nav>
++
++<!-- =========================================================
++     HERO
++========================================================= -->
++<section id="top" class="hero" aria-label="Introduction">
++  <!-- Noise + grid texture -->
++  <div class="hero-noise" aria-hidden="true"></div>
++
++  <div class="hero-inner">
++    <div class="hero-text" id="hero-text">
++
++      <div class="hero-pill" id="hero-avail">
++        <span class="pill-dot" aria-hidden="true"></span>
++        Open to internships &amp; entry-level roles
+       </div>
+-      <p class="hero-bio">
+-        Final-year B.Tech CSE (AI &amp; ML) student crafting intelligent, data-driven software solutions.
+-        Internship-proven, project-focused, and ready to contribute from day one.
++
++      <h1 id="hero-name">
++        Jitendra Babu
++      </h1>
++
++      <p class="hero-sub" id="hero-sub">
++        B.Tech CSE (AI &amp; ML) &nbsp;·&nbsp;
++        <span id="typed" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+       </p>
+-      <div class="hero-cta" id="hero-cta">
+-        <a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="hero-resume-btn">
+-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+-          Download Resume
++
++      <p class="hero-bio" id="hero-bio">
++        I'm a third-year engineering student who's been building things with Python —
++        mostly data analysis and automation. I completed an internship at
++        <strong>Labmentix</strong> and have worked on projects in IPL analytics,
++        retail data, airline delays, and voice automation.
++      </p>
++
++      <div class="hero-btns" id="hero-btns">
++        <a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer"
++           class="btn-solid" id="btn-resume">
++          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
++               stroke-width="2.5" aria-hidden="true">
++            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
++            <polyline points="7 10 12 15 17 10"/>
++            <line x1="12" y1="15" x2="12" y2="3"/>
++          </svg>
++          Resume
+         </a>
+-        <a href="#contact" class="btn btn-outline" id="hero-contact-btn">Let's Talk</a>
++        <a href="#projects" class="btn-ghost" id="btn-work">View Projects</a>
+       </div>
+-      <div class="hero-socials" id="hero-socials">
+-        <a href="https://www.linkedin.com/in/mudde-jitendra-babu-38ab86298" target="_blank" rel="noopener noreferrer" class="social-icon" id="hero-linkedin" aria-label="LinkedIn Profile">
+-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
++
++      <div class="hero-links" id="hero-links">
++        <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer"
++           class="icon-link" id="hl-github" aria-label="GitHub">
++          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
++            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
++          </svg>
++          <span>jithu748</span>
+         </a>
+-        <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="social-icon" id="hero-github" aria-label="GitHub Profile">
+-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
++        <a href="https://www.linkedin.com/in/mudde-jitendra-babu-0b3403358/" target="_blank"
++           rel="noopener noreferrer" class="icon-link" id="hl-linkedin" aria-label="LinkedIn">
++          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
++            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
++          </svg>
++          <span>LinkedIn</span>
+         </a>
+-        <a href="mailto:muddejitendrababu@gmail.com" class="social-icon" id="hero-email" aria-label="Send Email">
+-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
++        <a href="mailto:muddejitendrababu@gmail.com" class="icon-link" id="hl-email"
++           aria-label="Email">
++          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
++               width="18" height="18" aria-hidden="true">
++            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
++            <polyline points="22,6 12,13 2,6"/>
++          </svg>
++          <span>Email</span>
+         </a>
+       </div>
+     </div>
+-    <div class="hero-image-wrap" id="hero-image-wrap">
+-      <div class="hero-img-glow" aria-hidden="true"></div>
+-      <img src="./assets/profile-pic.png" alt="Jitendra Babu — Software Developer and AI/ML Engineer" class="hero-img" id="hero-profile-img" />
+-    </div>
+-  </section>
+-
+-  <!-- ========== STATS BAR ========== -->
+-  <section id="stats" class="stats-section" aria-label="Achievements">
+-    <div class="stats-inner">
+-      <div class="stat-item reveal">
+-        <span class="stat-number" data-target="3" id="stat-projects">0</span>
+-        <span class="stat-label">Internship Projects</span>
+-      </div>
+-      <div class="stat-divider" aria-hidden="true"></div>
+-      <div class="stat-item reveal">
+-        <span class="stat-number" data-target="1" id="stat-assistant">0</span>
+-        <span class="stat-label">AI Assistant Built</span>
+-      </div>
+-      <div class="stat-divider" aria-hidden="true"></div>
+-      <div class="stat-item reveal">
+-        <span class="stat-number" data-target="4" id="stat-skills">0</span>
+-        <span class="stat-label">Core Tech Domains</span>
+-      </div>
+-      <div class="stat-divider" aria-hidden="true"></div>
+-      <div class="stat-item reveal">
+-        <span class="stat-number" id="stat-year">2026</span>
+-        <span class="stat-label">Graduating Year</span>
+-      </div>
+-    </div>
+-  </section>
+ 
+-  <!-- ========== ABOUT SECTION ========== -->
+-  <section id="about" aria-labelledby="about-heading">
+-    <div class="section-header reveal">
+-      <span class="section-tag">Who I Am</span>
+-      <h2 class="section-title" id="about-heading">About Me</h2>
++    <div class="hero-photo" id="hero-photo" aria-hidden="true">
++      <div class="photo-halo"></div>
++      <img src="./assets/profile-pic.png"
++           alt="Jitendra Babu"
++           class="photo-img" id="photo-img"
++           width="320" height="320" />
+     </div>
++  </div>
++</section>
++
++<!-- =========================================================
++     ABOUT
++========================================================= -->
++<section id="about" class="section" aria-labelledby="h-about">
++  <div class="section-wrap">
++    <div class="section-eyebrow reveal">About</div>
++    <h2 id="h-about" class="section-heading reveal">A bit about me</h2>
++
+     <div class="about-grid">
+-      <div class="about-image reveal">
+-        <div class="about-img-frame">
+-          <img src="./assets/about-pic.png" alt="Jitendra Babu" />
++      <div class="about-img-col reveal">
++        <div class="about-photo-frame">
++          <img src="./assets/about-pic.png" alt="Jitendra Babu" loading="lazy"
++               class="about-photo" width="320" height="380" />
+         </div>
+-        <div class="about-quick-info" aria-label="Quick facts">
+-          <div class="quick-info-item">
+-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+-            India
++
++        <div class="about-fact-list" aria-label="Quick facts">
++          <div class="fact-row">
++            <span class="fact-icon" aria-hidden="true">🎓</span>
++            <span>B.Tech CSE · AI &amp; ML · 2023–2027</span>
+           </div>
+-          <div class="quick-info-item">
+-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+-            B.Tech CSE (AI &amp; ML)
++          <div class="fact-row">
++            <span class="fact-icon" aria-hidden="true">💼</span>
++            <span>Labmentix — Intern (completed)</span>
+           </div>
+-          <div class="quick-info-item">
+-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+-            Final Year · 2026
++          <div class="fact-row">
++            <span class="fact-icon" aria-hidden="true">📍</span>
++            <span>India</span>
+           </div>
+         </div>
+       </div>
+-      <div class="about-content reveal">
+-        <p class="about-intro">
+-          I'm <strong>Jitendra Babu</strong>, a final-year B.Tech student specializing in 
+-          Computer Science with a focus on <strong>Artificial Intelligence and Machine Learning</strong>.
++
++      <div class="about-text-col reveal">
++        <p class="about-p">
++          I'm Jitendra Babu, a third-year B.Tech student in Computer Science &amp; Engineering
++          with a specialization in AI &amp; ML (batch 2023–2027). Most of what I know came
++          from building actual projects, not just reading textbooks.
+         </p>
+-        <p class="about-body">
+-          I thrive at the intersection of software engineering and intelligent systems — whether that's 
+-          building responsive web applications, engineering ML-powered pipelines, or transforming 
+-          complex datasets into actionable Power BI dashboards.
++        <p class="about-p">
++          I got into data analysis because I was curious — I had datasets and wanted to
++          know what they were actually saying. That curiosity led to projects on IPL cricket
++          stats, retail sales patterns, and airline delays, all using Python, Pandas, and
++          Matplotlib/Seaborn.
+         </p>
+-        <p class="about-body">
+-          Through my internship at <strong>Labmentix</strong>, I gained hands-on experience delivering 
+-          production-ready projects under real-world constraints. I'm actively seeking 
+-          <strong>software developer internships and full-time roles</strong> where I can contribute 
+-          meaningfully from day one and grow alongside driven teams.
++        <p class="about-p">
++          Earlier this year I interned at <strong>Labmentix</strong>, which was my first
++          experience working inside a real organization on actual deliverables. It pushed me
++          to write cleaner code, handle feedback, and finish things properly.
+         </p>
+-        <div class="about-education" aria-label="Education">
+-          <div class="edu-card">
+-            <div class="edu-icon" aria-hidden="true">🎓</div>
+-            <div class="edu-details">
+-              <h3>B.Tech — Computer Science &amp; Engineering</h3>
+-              <p>Specialization: Artificial Intelligence &amp; Machine Learning</p>
+-              <span class="edu-year">2022 – 2026</span>
+-            </div>
++        <p class="about-p about-p-end">
++          I'm looking for internships or entry-level roles where I can keep building.
++          I work mostly with Python, but I pick up tools quickly when the problem
++          requires it.
++        </p>
++
++        <div class="edu-card">
++          <div class="edu-left">
++            <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
++            <div class="edu-spec">Specialization in Artificial Intelligence &amp; Machine Learning</div>
++          </div>
++          <div class="edu-right">
++            <span class="edu-tag">2023 – 2027</span>
+           </div>
+         </div>
+       </div>
+     </div>
+-  </section>
++  </div>
++</section>
+ 
+-  <!-- ========== SKILLS SECTION ========== -->
+-  <section id="skills" aria-labelledby="skills-heading">
+-    <div class="section-header reveal">
+-      <span class="section-tag">What I Work With</span>
+-      <h2 class="section-title" id="skills-heading">Technical Skills</h2>
+-    </div>
+-    <div class="skills-grid">
++<!-- =========================================================
++     SKILLS
++========================================================= -->
++<section id="skills" class="section section-alt" aria-labelledby="h-skills">
++  <div class="section-wrap">
++    <div class="section-eyebrow reveal">Skills</div>
++    <h2 id="h-skills" class="section-heading reveal">What I work with</h2>
++    <p class="section-sub reveal">
++      These are tools I've actually used in projects or coursework.
++      I've marked them honestly.
++    </p>
+ 
+-      <div class="skill-category reveal" id="skill-cat-languages">
+-        <div class="skill-cat-header">
+-          <span class="skill-cat-icon" aria-hidden="true">⌨️</span>
+-          <h3>Languages</h3>
+-        </div>
+-        <div class="skill-pills">
+-          <span class="skill-pill" data-level="proficient">Python</span>
+-          <span class="skill-pill" data-level="proficient">JavaScript</span>
+-          <span class="skill-pill" data-level="intermediate">Java</span>
+-          <span class="skill-pill" data-level="intermediate">SQL</span>
+-          <span class="skill-pill" data-level="proficient">HTML5</span>
+-          <span class="skill-pill" data-level="proficient">CSS3</span>
+-        </div>
++    <div class="skills-grid reveal" id="skills-grid">
++
++      <div class="skill-block" id="sb-lang">
++        <h3 class="skill-block-title">Languages</h3>
++        <ul class="skill-list" aria-label="Language skills">
++          <li class="skill-row">
++            <span class="skill-name">Python</span>
++            <div class="skill-bar-wrap" aria-label="Comfortable — used in all projects">
++              <div class="skill-bar" style="--w:72%"></div>
++            </div>
++            <span class="skill-note">Comfortable</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">SQL</span>
++            <div class="skill-bar-wrap" aria-label="Familiar — used for data querying">
++              <div class="skill-bar" style="--w:48%"></div>
++            </div>
++            <span class="skill-note">Familiar</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">JavaScript</span>
++            <div class="skill-bar-wrap" aria-label="Basic — this portfolio, some tutorials">
++              <div class="skill-bar" style="--w:35%"></div>
++            </div>
++            <span class="skill-note">Basic</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">Java</span>
++            <div class="skill-bar-wrap" aria-label="Basic — DSA coursework">
++              <div class="skill-bar" style="--w:30%"></div>
++            </div>
++            <span class="skill-note">Basic</span>
++          </li>
++        </ul>
+       </div>
+ 
+-      <div class="skill-category reveal" id="skill-cat-ai">
+-        <div class="skill-cat-header">
+-          <span class="skill-cat-icon" aria-hidden="true">🤖</span>
+-          <h3>AI &amp; Data</h3>
+-        </div>
+-        <div class="skill-pills">
+-          <span class="skill-pill" data-level="intermediate">Machine Learning</span>
+-          <span class="skill-pill" data-level="proficient">Data Analytics</span>
+-          <span class="skill-pill" data-level="proficient">Power BI</span>
+-          <span class="skill-pill" data-level="intermediate">Pandas</span>
+-          <span class="skill-pill" data-level="intermediate">NumPy</span>
+-          <span class="skill-pill" data-level="intermediate">Scikit-learn</span>
+-        </div>
++      <div class="skill-block" id="sb-data">
++        <h3 class="skill-block-title">Data &amp; Analysis</h3>
++        <ul class="skill-list" aria-label="Data science skills">
++          <li class="skill-row">
++            <span class="skill-name">Pandas</span>
++            <div class="skill-bar-wrap" aria-label="Comfortable — core tool for all projects">
++              <div class="skill-bar" style="--w:70%"></div>
++            </div>
++            <span class="skill-note">Comfortable</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">NumPy</span>
++            <div class="skill-bar-wrap" aria-label="Comfortable — used alongside Pandas">
++              <div class="skill-bar" style="--w:65%"></div>
++            </div>
++            <span class="skill-note">Comfortable</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">Matplotlib / Seaborn</span>
++            <div class="skill-bar-wrap" aria-label="Comfortable — visualization in all projects">
++              <div class="skill-bar" style="--w:68%"></div>
++            </div>
++            <span class="skill-note">Comfortable</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">Power BI</span>
++            <div class="skill-bar-wrap" aria-label="Familiar — retail dashboard project">
++              <div class="skill-bar" style="--w:50%"></div>
++            </div>
++            <span class="skill-note">Familiar</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">Scikit-learn</span>
++            <div class="skill-bar-wrap" aria-label="Familiar — classification tasks">
++              <div class="skill-bar" style="--w:45%"></div>
++            </div>
++            <span class="skill-note">Familiar</span>
++          </li>
++        </ul>
+       </div>
+ 
+-      <div class="skill-category reveal" id="skill-cat-web">
+-        <div class="skill-cat-header">
+-          <span class="skill-cat-icon" aria-hidden="true">🌐</span>
+-          <h3>Web Development</h3>
+-        </div>
+-        <div class="skill-pills">
+-          <span class="skill-pill" data-level="proficient">Responsive Design</span>
+-          <span class="skill-pill" data-level="intermediate">REST APIs</span>
+-          <span class="skill-pill" data-level="intermediate">Flask</span>
+-          <span class="skill-pill" data-level="intermediate">React</span>
+-        </div>
++      <div class="skill-block" id="sb-tools">
++        <h3 class="skill-block-title">Tools &amp; Workflow</h3>
++        <ul class="skill-list" aria-label="Tool skills">
++          <li class="skill-row">
++            <span class="skill-name">Jupyter Notebook</span>
++            <div class="skill-bar-wrap" aria-label="Comfortable — primary dev environment">
++              <div class="skill-bar" style="--w:75%"></div>
++            </div>
++            <span class="skill-note">Comfortable</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">Git &amp; GitHub</span>
++            <div class="skill-bar-wrap" aria-label="Familiar — version control basics">
++              <div class="skill-bar" style="--w:52%"></div>
++            </div>
++            <span class="skill-note">Familiar</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">VS Code</span>
++            <div class="skill-bar-wrap" aria-label="Comfortable — daily editor">
++              <div class="skill-bar" style="--w:78%"></div>
++            </div>
++            <span class="skill-note">Comfortable</span>
++          </li>
++          <li class="skill-row">
++            <span class="skill-name">HTML &amp; CSS</span>
++            <div class="skill-bar-wrap" aria-label="Basic — this portfolio">
++              <div class="skill-bar" style="--w:38%"></div>
++            </div>
++            <span class="skill-note">Basic</span>
++          </li>
++        </ul>
+       </div>
+ 
+-      <div class="skill-category reveal" id="skill-cat-tools">
+-        <div class="skill-cat-header">
+-          <span class="skill-cat-icon" aria-hidden="true">🛠️</span>
+-          <h3>Tools &amp; Platforms</h3>
+-        </div>
+-        <div class="skill-pills">
+-          <span class="skill-pill" data-level="proficient">Git &amp; GitHub</span>
+-          <span class="skill-pill" data-level="proficient">VS Code</span>
+-          <span class="skill-pill" data-level="intermediate">Jupyter Notebook</span>
+-          <span class="skill-pill" data-level="intermediate">Postman</span>
+-          <span class="skill-pill" data-level="intermediate">Linux</span>
++    </div>
++
++    <p class="skills-disclaimer reveal">
++      Bar length = honest self-assessment. Comfortable means I can use it in a project.
++      Familiar means I've used it but would need docs. Basic means I've touched it in coursework.
++    </p>
++  </div>
++</section>
++
++<!-- =========================================================
++     EXPERIENCE
++========================================================= -->
++<section id="experience" class="section" aria-labelledby="h-exp">
++  <div class="section-wrap">
++    <div class="section-eyebrow reveal">Experience</div>
++    <h2 id="h-exp" class="section-heading reveal">Internship</h2>
++
++    <div class="exp-card reveal" id="exp-labmentix">
++      <div class="exp-header">
++        <div class="exp-header-left">
++          <div class="exp-company">Labmentix</div>
++          <div class="exp-role">Software Development Intern</div>
+         </div>
++        <span class="exp-badge">Completed · 2024</span>
+       </div>
+ 
+-    </div>
+-    <div class="skill-legend" aria-label="Proficiency legend">
+-      <span><span class="legend-dot" data-level="proficient"></span> Proficient</span>
+-      <span><span class="legend-dot" data-level="intermediate"></span> Intermediate</span>
+-    </div>
+-  </section>
++      <p class="exp-summary">
++        This was my first real work experience. I joined Labmentix as a software intern
++        and worked on projects that had actual requirements and timelines — which was
++        different from personal projects where you can stall indefinitely.
++      </p>
+ 
+-  <!-- ========== EXPERIENCE SECTION ========== -->
+-  <section id="experience" aria-labelledby="experience-heading">
+-    <div class="section-header reveal">
+-      <span class="section-tag">Where I've Worked</span>
+-      <h2 class="section-title" id="experience-heading">Experience</h2>
++      <ul class="exp-bullets" aria-label="What I did at Labmentix">
++        <li>
++          Worked on multiple small projects during the internship, getting practice
++          writing Python for real tasks rather than assignments.
++        </li>
++        <li>
++          Learned how to read someone else's requirements and translate them into
++          working code — a skill that coursework doesn't really teach.
++        </li>
++        <li>
++          Dealt with messy, real-world data for the first time — things like
++          inconsistent column names, missing values, and formats that don't match
++          what you expect.
++        </li>
++        <li>
++          Got feedback on my code and had to revise it, which made me much more
++          careful about writing readable, maintainable scripts from the start.
++        </li>
++      </ul>
++
++      <div class="exp-tags" aria-label="Technologies used">
++        <span class="tag">Python</span>
++        <span class="tag">Pandas</span>
++        <span class="tag">Data Cleaning</span>
++        <span class="tag">Git</span>
++        <span class="tag">Jupyter Notebook</span>
++      </div>
+     </div>
+-    <div class="timeline" role="list">
+-
+-      <div class="timeline-item reveal" role="listitem" id="exp-labmentix">
+-        <div class="timeline-dot" aria-hidden="true"></div>
+-        <div class="timeline-card">
+-          <div class="timeline-header">
+-            <div>
+-              <h3 class="timeline-role">Software Development Intern</h3>
+-              <p class="timeline-company">Labmentix</p>
++  </div>
++</section>
++
++<!-- =========================================================
++     PROJECTS
++========================================================= -->
++<section id="projects" class="section section-alt" aria-labelledby="h-proj">
++  <div class="section-wrap">
++    <div class="section-eyebrow reveal">Projects</div>
++    <h2 id="h-proj" class="section-heading reveal">Things I've built</h2>
++    <p class="section-sub reveal">
++      Four real projects — click any card to see the full breakdown.
++    </p>
++
++    <div class="acc-list" id="acc-list" role="list">
++
++      <!-- PROJECT 01 — IPL Data Analysis -->
++      <div class="acc-item reveal" id="acc-ipl" role="listitem">
++        <button class="acc-trigger" id="acc-ipl-btn"
++                aria-expanded="false" aria-controls="acc-ipl-body"
++                onclick="toggleAcc('acc-ipl')">
++          <div class="acc-trigger-left">
++            <span class="acc-num" aria-hidden="true">01</span>
++            <div class="acc-summary">
++              <div class="acc-cat">Data Analysis &nbsp;&middot;&nbsp; Python &nbsp;&middot;&nbsp; Jupyter</div>
++              <h3 class="acc-title" id="acc-ipl-h">IPL Data Analysis</h3>
++              <p class="acc-blurb">Explored multi-season IPL match &amp; delivery data to find which teams and players perform consistently &mdash; not just who wins the most.</p>
++            </div>
++          </div>
++          <div class="acc-trigger-right">
++            <div class="acc-tech-peek" aria-hidden="true">
++              <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Seaborn</span>
+             </div>
+-            <div class="timeline-meta">
+-              <span class="timeline-badge">Internship</span>
+-              <span class="timeline-date">2024</span>
++            <div class="acc-chevron" aria-hidden="true">
++              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+             </div>
+           </div>
+-          <ul class="timeline-bullets" aria-label="Responsibilities and achievements">
+-            <li>Developed and deployed an <strong>AI-powered Resume Screening System</strong> using Python, Flask, and NLP techniques to automate candidate evaluation</li>
+-            <li>Built a full-stack web interface with responsive design, integrating ML models for real-time resume parsing and ranking</li>
+-            <li>Collaborated on 3 end-to-end internship projects, gaining experience across the full software development lifecycle</li>
+-            <li>Applied data analytics and visualization to derive actionable insights from structured datasets</li>
+-          </ul>
+-          <div class="timeline-tags" aria-label="Technologies used">
+-            <span class="tech-tag">Python</span>
+-            <span class="tech-tag">Flask</span>
+-            <span class="tech-tag">NLP</span>
+-            <span class="tech-tag">Machine Learning</span>
+-            <span class="tech-tag">HTML/CSS</span>
+-            <span class="tech-tag">JavaScript</span>
++        </button>
++        <div class="acc-body" id="acc-ipl-body" role="region" aria-labelledby="acc-ipl-h">
++          <div class="acc-body-inner">
++            <div class="acc-content-grid">
++              <div class="acc-details">
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9888;</span> Problem Statement</div>
++                  <p class="acc-fact-text">Raw IPL CSV data (matches + deliveries) has hundreds of columns and seasons of records. It tells you <em>what happened</em> in each ball, but gives no picture of performance trends &mdash; who consistently scores, which teams win in pressure chases, how toss decisions affect results.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10022;</span> Solution</div>
++                  <p class="acc-fact-text">Loaded both datasets with Pandas, merged on match ID, cleaned null values and duplicate rows. Used <code>groupby</code> and aggregation to compute team win rates, top run-scorers across seasons, and bowling economy by phase. Visualized with Seaborn bar charts, horizontal rankings, and a correlation heatmap.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10072;</span> Features</div>
++                  <ul class="acc-feature-list">
++                    <li>Top 10 run scorers ranked by total runs (horizontal bar chart)</li>
++                    <li>Team win distribution across all IPL seasons</li>
++                    <li>Toss decision vs match result correlation heatmap</li>
++                    <li>Season-by-season performance comparison</li>
++                    <li>Bowling economy and wicket analysis by player</li>
++                  </ul>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9900;</span> Key Learning</div>
++                  <p class="acc-fact-text">The hardest part of data analysis isn't writing the code &mdash; it's deciding <em>which question to ask</em>. <code>groupby</code> with <code>.agg()</code> is where most insight lives. A clean chart title matters more than chart type.</p>
++                </div>
++                <div class="acc-tools-row">
++                  <span class="tag">Python 3</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Jupyter Notebook</span>
++                </div>
++                <div class="acc-action-row">
++                  <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-gh" id="ipl-github-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
++                    View on GitHub
++                  </a>
++                  <a href="https://www.linkedin.com/in/mudde-jitendra-babu-0b3403358/" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-li" id="ipl-linkedin-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
++                    LinkedIn Post
++                  </a>
++                </div>
++              </div>
++              <div class="acc-screenshot-col">
++                <div class="acc-screenshot-frame">
++                  <img src="./assets/project-ipl.png" alt="IPL Data Analysis Jupyter Notebook showing bar charts and heatmaps" class="acc-screenshot" loading="lazy" />
++                  <div class="acc-screenshot-label" aria-hidden="true">Actual notebook output</div>
++                </div>
++              </div>
++            </div>
+           </div>
+         </div>
+       </div>
+ 
+-    </div>
+-  </section>
+-
+-  <!-- ========== PROJECTS SECTION ========== -->
+-  <section id="projects" aria-labelledby="projects-heading">
+-    <div class="section-header reveal">
+-      <span class="section-tag">What I've Built</span>
+-      <h2 class="section-title" id="projects-heading">Projects</h2>
+-    </div>
+-    <div class="projects-grid">
+-
+-      <!-- Project 1: AI Resume Screener -->
+-      <article class="project-card reveal" id="project-resume-screener">
+-        <div class="project-img-wrap">
+-          <img src="./assets/project-1.png" alt="AI Resume Screening System — automated candidate evaluation tool" class="project-img" loading="lazy" />
+-          <div class="project-overlay" aria-hidden="true">
+-            <span>View Project</span>
+-          </div>
+-        </div>
+-        <div class="project-body">
+-          <div class="project-header-row">
+-            <h3 class="project-name">AI Resume Screening System</h3>
+-            <span class="project-type">AI / NLP</span>
++      <!-- PROJECT 02 — Retail Analytics Dashboard -->
++      <div class="acc-item reveal" id="acc-retail" role="listitem">
++        <button class="acc-trigger" id="acc-retail-btn"
++                aria-expanded="false" aria-controls="acc-retail-body"
++                onclick="toggleAcc('acc-retail')">
++          <div class="acc-trigger-left">
++            <span class="acc-num" aria-hidden="true">02</span>
++            <div class="acc-summary">
++              <div class="acc-cat">Analytics &nbsp;&middot;&nbsp; Power BI &nbsp;&middot;&nbsp; Python</div>
++              <h3 class="acc-title" id="acc-retail-h">Retail Analytics Dashboard</h3>
++              <p class="acc-blurb">Cleaned and visualized a retail sales dataset to show monthly trends, top categories, and regional breakdowns in a multi-panel dashboard.</p>
++            </div>
+           </div>
+-          <p class="project-desc">
+-            An intelligent candidate evaluation tool that automates resume parsing using NLP and ML. 
+-            Extracts key skills, ranks applicants against job descriptions, and reduces manual 
+-            screening effort significantly.
+-          </p>
+-          <div class="project-stack" aria-label="Technologies used">
+-            <span class="tech-tag">Python</span>
+-            <span class="tech-tag">Flask</span>
+-            <span class="tech-tag">NLP</span>
+-            <span class="tech-tag">Scikit-learn</span>
+-            <span class="tech-tag">HTML/CSS</span>
++          <div class="acc-trigger-right">
++            <div class="acc-tech-peek" aria-hidden="true">
++              <span class="tag">Pandas</span><span class="tag">Power BI</span><span class="tag">Python</span>
++            </div>
++            <div class="acc-chevron" aria-hidden="true">
++              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
++            </div>
+           </div>
+-          <div class="project-links">
+-            <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="project-link" id="p1-github" aria-label="View Resume Screener source code on GitHub">
+-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+-              Source Code
+-            </a>
+-            <a href="https://resume-screening-14.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary" id="p1-demo" aria-label="View live demo of Resume Screener">
+-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+-              Live Demo
+-            </a>
++        </button>
++        <div class="acc-body" id="acc-retail-body" role="region" aria-labelledby="acc-retail-h">
++          <div class="acc-body-inner">
++            <div class="acc-content-grid">
++              <div class="acc-details">
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9888;</span> Problem Statement</div>
++                  <p class="acc-fact-text">A retail transaction dataset with rows of sales records across product categories, regions, and months. Raw, no clear story. No easy way to see what's selling, where growth is happening, or what seasonal patterns exist without processing it first.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10022;</span> Solution</div>
++                  <p class="acc-fact-text">Cleaned data with Pandas &mdash; handled missing values, fixed date parsing, removed duplicates. Aggregated by category, region, and month using <code>resample</code> and <code>groupby</code>. Built multi-panel Matplotlib dashboard first, then moved to Power BI for interactive slicer-based filtering.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10072;</span> Features</div>
++                  <ul class="acc-feature-list">
++                    <li>Monthly revenue trend line chart with seasonal markers</li>
++                    <li>Top product category performance bar chart</li>
++                    <li>Regional sales distribution breakdown</li>
++                    <li>Power BI slicers for interactive date and category filtering</li>
++                    <li>Year-over-year comparison panel</li>
++                  </ul>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9900;</span> Key Learning</div>
++                  <p class="acc-fact-text">Data cleaning was 60% of the work &mdash; a real surprise. Also learned that chart titles and axis labels are not optional: a technically correct chart with no context is useless to a non-technical viewer. Power BI slicers make dashboards actually usable, not just visual.</p>
++                </div>
++                <div class="acc-tools-row">
++                  <span class="tag">Python 3</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Power BI</span><span class="tag">Excel / CSV</span><span class="tag">Jupyter Notebook</span>
++                </div>
++                <div class="acc-action-row">
++                  <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-gh" id="retail-github-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
++                    View on GitHub
++                  </a>
++                  <a href="https://www.linkedin.com/in/mudde-jitendra-babu-0b3403358/" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-li" id="retail-linkedin-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
++                    LinkedIn Post
++                  </a>
++                </div>
++              </div>
++              <div class="acc-screenshot-col">
++                <div class="acc-screenshot-frame">
++                  <img src="./assets/project-retail.png" alt="Retail Analytics Dashboard showing sales trends and category charts" class="acc-screenshot" loading="lazy" />
++                  <div class="acc-screenshot-label" aria-hidden="true">Dashboard output</div>
++                </div>
++              </div>
++            </div>
+           </div>
+         </div>
+-      </article>
+-
+-      <!-- Project 2: Jarvis Virtual Assistant -->
+-      <article class="project-card reveal" id="project-jarvis">
+-        <div class="project-img-wrap">
+-          <img src="./assets/project-2.png" alt="Jarvis AI Virtual Assistant — voice-activated Python AI assistant" class="project-img" loading="lazy" />
+-          <div class="project-overlay" aria-hidden="true">
+-            <span>View Project</span>
++      </div>
++
++      <!-- PROJECT 03 — Airline Delay Analysis -->
++      <div class="acc-item reveal" id="acc-airline" role="listitem">
++        <button class="acc-trigger" id="acc-airline-btn"
++                aria-expanded="false" aria-controls="acc-airline-body"
++                onclick="toggleAcc('acc-airline')">
++          <div class="acc-trigger-left">
++            <span class="acc-num" aria-hidden="true">03</span>
++            <div class="acc-summary">
++              <div class="acc-cat">Data Analysis &nbsp;&middot;&nbsp; Python &nbsp;&middot;&nbsp; Large Dataset</div>
++              <h3 class="acc-title" id="acc-airline-h">Airline Delay Analysis</h3>
++              <p class="acc-blurb">Analyzed US airline delay data across carriers, airports, and time periods to identify which routes delay most and why.</p>
++            </div>
++          </div>
++          <div class="acc-trigger-right">
++            <div class="acc-tech-peek" aria-hidden="true">
++              <span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span>
++            </div>
++            <div class="acc-chevron" aria-hidden="true">
++              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
++            </div>
++          </div>
++        </button>
++        <div class="acc-body" id="acc-airline-body" role="region" aria-labelledby="acc-airline-h">
++          <div class="acc-body-inner">
++            <div class="acc-content-grid">
++              <div class="acc-details">
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9888;</span> Problem Statement</div>
++                  <p class="acc-fact-text">The US DOT airline delay dataset has hundreds of thousands of rows across multiple carriers, airports, routes, and seasons. It has delay cause breakdowns (carrier, weather, NAS, security) but no summary &mdash; impossible to spot patterns just by scrolling.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10022;</span> Solution</div>
++                  <p class="acc-fact-text">Used Pandas with <code>chunksize</code> to read the large CSV without memory issues. Filtered by year, aggregated average delay by carrier and delay type. Built a heatmap of delays by day-of-week and hour-of-day, a stacked bar chart of delay causes, and a scatter plot of departure time vs. delay.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10072;</span> Features</div>
++                  <ul class="acc-feature-list">
++                    <li>Carrier-level average delay comparison (horizontal bar chart)</li>
++                    <li>Delay cause breakdown &mdash; carrier vs weather vs NAS</li>
++                    <li>Heatmap of delays by hour-of-day and day-of-week</li>
++                    <li>Departure time scatter plot showing delay concentration</li>
++                    <li>Airport-level filtering and aggregation</li>
++                  </ul>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9900;</span> Key Learning</div>
++                  <p class="acc-fact-text">Reading large CSVs in chunks is essential when RAM is limited &mdash; loading the full file at once crashed the kernel. Learned how much better heatmaps are for time-based patterns compared to line charts. Not all charts suit all questions.</p>
++                </div>
++                <div class="acc-tools-row">
++                  <span class="tag">Python 3</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Seaborn</span><span class="tag">Matplotlib</span><span class="tag">Jupyter Notebook</span>
++                </div>
++                <div class="acc-action-row">
++                  <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-gh" id="airline-github-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
++                    View on GitHub
++                  </a>
++                  <a href="https://www.linkedin.com/in/mudde-jitendra-babu-0b3403358/" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-li" id="airline-linkedin-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
++                    LinkedIn Post
++                  </a>
++                </div>
++              </div>
++              <div class="acc-screenshot-col">
++                <div class="acc-screenshot-frame">
++                  <img src="./assets/project-airline.png" alt="Airline Delay Analysis showing heatmap and bar charts" class="acc-screenshot" loading="lazy" />
++                  <div class="acc-screenshot-label" aria-hidden="true">Analysis output</div>
++                </div>
++              </div>
++            </div>
+           </div>
+         </div>
+-        <div class="project-body">
+-          <div class="project-header-row">
+-            <h3 class="project-name">Jarvis Virtual Assistant</h3>
+-            <span class="project-type">AI / Python</span>
++      </div>
++
++      <!-- PROJECT 04 — Jarvis Virtual Assistant -->
++      <div class="acc-item reveal" id="acc-jarvis" role="listitem">
++        <button class="acc-trigger" id="acc-jarvis-btn"
++                aria-expanded="false" aria-controls="acc-jarvis-body"
++                onclick="toggleAcc('acc-jarvis')">
++          <div class="acc-trigger-left">
++            <span class="acc-num" aria-hidden="true">04</span>
++            <div class="acc-summary">
++              <div class="acc-cat">Python &nbsp;&middot;&nbsp; Voice AI &nbsp;&middot;&nbsp; Automation</div>
++              <h3 class="acc-title" id="acc-jarvis-h">Jarvis Virtual Assistant</h3>
++              <p class="acc-blurb">A voice-controlled Python desktop assistant built to understand how speech recognition and TTS pipelines work from the ground up.</p>
++            </div>
+           </div>
+-          <p class="project-desc">
+-            A voice-activated AI assistant inspired by JARVIS, capable of answering queries, 
+-            executing system commands, fetching live data, and interacting naturally through 
+-            speech recognition and text-to-speech synthesis.
+-          </p>
+-          <div class="project-stack" aria-label="Technologies used">
+-            <span class="tech-tag">Python</span>
+-            <span class="tech-tag">SpeechRecognition</span>
+-            <span class="tech-tag">pyttsx3</span>
+-            <span class="tech-tag">NLP</span>
+-            <span class="tech-tag">APIs</span>
++          <div class="acc-trigger-right">
++            <div class="acc-tech-peek" aria-hidden="true">
++              <span class="tag">SpeechRecognition</span><span class="tag">pyttsx3</span><span class="tag">Python</span>
++            </div>
++            <div class="acc-chevron" aria-hidden="true">
++              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
++            </div>
+           </div>
+-          <div class="project-links">
+-            <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="project-link" id="p2-github" aria-label="View Jarvis source code on GitHub">
+-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+-              Source Code
+-            </a>
+-            <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary" id="p2-demo" aria-label="View Jarvis project on GitHub">
+-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+-              View Project
+-            </a>
++        </button>
++        <div class="acc-body" id="acc-jarvis-body" role="region" aria-labelledby="acc-jarvis-h">
++          <div class="acc-body-inner">
++            <div class="acc-content-grid">
++              <div class="acc-details">
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9888;</span> Problem Statement</div>
++                  <p class="acc-fact-text">I used Siri and Google Assistant without understanding what was actually happening &mdash; how audio becomes text, how text becomes action, how the response is spoken back. I wanted to build this myself to understand the full pipeline, not just use the API.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10022;</span> Solution</div>
++                  <p class="acc-fact-text">Built a Python program that captures microphone input using <code>SpeechRecognition</code>, transcribes it via Google Speech API, matches the text against a dictionary of command handlers, executes the action, and responds via <code>pyttsx3</code> text-to-speech. All running locally on desktop.</p>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#10072;</span> Features</div>
++                  <ul class="acc-feature-list">
++                    <li>Voice command capture via microphone using SpeechRecognition</li>
++                    <li>Google Speech-to-Text for transcription</li>
++                    <li>Text-to-speech responses using pyttsx3 (offline)</li>
++                    <li>Wikipedia summary lookup by voice</li>
++                    <li>YouTube music playback using pywhatkit</li>
++                    <li>Time and date queries, greeting by time of day</li>
++                    <li>Web browser automation for quick searches</li>
++                  </ul>
++                </div>
++                <div class="acc-fact-group">
++                  <div class="acc-fact-label"><span class="acc-fact-icon" aria-hidden="true">&#9900;</span> Key Learning</div>
++                  <p class="acc-fact-text">Microphone sensitivity and ambient noise caused the most bugs &mdash; SpeechRecognition behaves very differently across environments. Learned to write long-running Python loops that stay responsive. Structuring the command dispatcher as a dictionary of functions (not a massive if-elif chain) made the code maintainable.</p>
++                </div>
++                <div class="acc-tools-row">
++                  <span class="tag">Python 3</span><span class="tag">SpeechRecognition</span><span class="tag">pyttsx3</span><span class="tag">pywhatkit</span><span class="tag">Wikipedia API</span><span class="tag">webbrowser</span><span class="tag">datetime</span>
++                </div>
++                <div class="acc-action-row">
++                  <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-gh" id="jarvis-github-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
++                    View on GitHub
++                  </a>
++                  <a href="https://www.linkedin.com/in/mudde-jitendra-babu-0b3403358/" target="_blank" rel="noopener noreferrer" class="acc-btn acc-btn-li" id="jarvis-linkedin-btn">
++                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
++                    LinkedIn Post
++                  </a>
++                </div>
++              </div>
++              <div class="acc-screenshot-col">
++                <div class="acc-screenshot-frame">
++                  <img src="./assets/project-jarvis.png" alt="Jarvis Virtual Assistant Python terminal showing voice command output" class="acc-screenshot" loading="lazy" />
++                  <div class="acc-screenshot-label" aria-hidden="true">Running locally</div>
++                </div>
++              </div>
++            </div>
+           </div>
+         </div>
+-      </article>
+-
+-      <!-- Project 3 -->
+-      <article class="project-card reveal" id="project-three">
+-        <div class="project-img-wrap">
+-          <img src="./assets/project-3.png" alt="Data Analytics Dashboard — Power BI visualization project" class="project-img" loading="lazy" />
+-          <div class="project-overlay" aria-hidden="true">
+-            <span>View Project</span>
++      </div>
++
++    </div><!-- /acc-list -->
++  </div>
++</section>
++
++<!-- =========================================================
++     CONTACT
++========================================================= -->
++<section id="contact" class="section" aria-labelledby="h-contact">
++  <div class="section-wrap">
++    <div class="section-eyebrow reveal">Contact</div>
++    <h2 id="h-contact" class="section-heading reveal">Get in touch</h2>
++    <p class="section-sub reveal">
++      If you're hiring, have a project to discuss, or just want to connect —
++      reach out. I reply to every message.
++    </p>
++
++    <div class="contact-layout">
++
++      <div class="contact-cards reveal" id="contact-cards">
++        <a href="mailto:muddejitendrababu@gmail.com"
++           class="ccard" id="cc-email" aria-label="Send email">
++          <div class="ccard-icon" aria-hidden="true">
++            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
++              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
++              <polyline points="22,6 12,13 2,6"/>
++            </svg>
+           </div>
+-        </div>
+-        <div class="project-body">
+-          <div class="project-header-row">
+-            <h3 class="project-name">Data Analytics Dashboard</h3>
+-            <span class="project-type">Analytics</span>
++          <div class="ccard-text">
++            <span class="ccard-label">Email</span>
++            <span class="ccard-val">muddejitendrababu@gmail.com</span>
+           </div>
+-          <p class="project-desc">
+-            An interactive data analytics solution built during the Labmentix internship. 
+-            Transforms raw datasets into meaningful visualizations and business insights 
+-            using Power BI, Python, and SQL for data processing.
+-          </p>
+-          <div class="project-stack" aria-label="Technologies used">
+-            <span class="tech-tag">Power BI</span>
+-            <span class="tech-tag">Python</span>
+-            <span class="tech-tag">SQL</span>
+-            <span class="tech-tag">Pandas</span>
+-            <span class="tech-tag">Data Visualization</span>
++          <svg class="ccard-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
++               stroke="currentColor" stroke-width="2" aria-hidden="true">
++            <path d="M5 12h14M12 5l7 7-7 7"/>
++          </svg>
++        </a>
++
++        <a href="https://www.linkedin.com/in/mudde-jitendra-babu-0b3403358/"
++           target="_blank" rel="noopener noreferrer"
++           class="ccard" id="cc-linkedin" aria-label="LinkedIn profile">
++          <div class="ccard-icon" aria-hidden="true">
++            <svg viewBox="0 0 24 24" fill="currentColor">
++              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
++            </svg>
+           </div>
+-          <div class="project-links">
+-            <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="project-link" id="p3-github" aria-label="View Analytics Dashboard source code on GitHub">
+-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+-              Source Code
+-            </a>
+-            <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="project-link project-link-primary" id="p3-demo" aria-label="View Analytics Dashboard project">
+-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+-              View Project
+-            </a>
++          <div class="ccard-text">
++            <span class="ccard-label">LinkedIn</span>
++            <span class="ccard-val">mudde-jitendra-babu-0b3403358</span>
+           </div>
+-        </div>
+-      </article>
++          <svg class="ccard-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
++               stroke="currentColor" stroke-width="2" aria-hidden="true">
++            <path d="M5 12h14M12 5l7 7-7 7"/>
++          </svg>
++        </a>
+ 
+-    </div>
+-  </section>
+-
+-  <!-- ========== CONTACT SECTION ========== -->
+-  <section id="contact" aria-labelledby="contact-heading">
+-    <div class="section-header reveal">
+-      <span class="section-tag">Let's Connect</span>
+-      <h2 class="section-title" id="contact-heading">Get In Touch</h2>
+-      <p class="section-subtitle">I'm open to internship opportunities, full-time roles, and collaboration on interesting projects.</p>
+-    </div>
+-    <div class="contact-grid">
+-      <div class="contact-info reveal" id="contact-info-block">
+-        <h3>Let's work together</h3>
+-        <p>Whether you have a role in mind, want to collaborate on a project, or just want to say hi — my inbox is always open.</p>
+-        <div class="contact-links-list" role="list">
+-          <a href="mailto:muddejitendrababu@gmail.com" class="contact-link-item" id="contact-email-link" role="listitem" aria-label="Send email to Jitendra">
+-            <div class="contact-link-icon" aria-hidden="true">
+-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+-            </div>
+-            <div>
+-              <span class="contact-link-label">Email</span>
+-              <span class="contact-link-value">muddejitendrababu@gmail.com</span>
+-            </div>
+-          </a>
+-          <a href="https://www.linkedin.com/in/mudde-jitendra-babu-38ab86298" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="contact-linkedin-link" role="listitem" aria-label="Visit LinkedIn profile">
+-            <div class="contact-link-icon" aria-hidden="true">
+-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+-            </div>
+-            <div>
+-              <span class="contact-link-label">LinkedIn</span>
+-              <span class="contact-link-value">mudde-jitendra-babu</span>
+-            </div>
+-          </a>
+-          <a href="https://github.com/jithu748" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="contact-github-link" role="listitem" aria-label="Visit GitHub profile">
+-            <div class="contact-link-icon" aria-hidden="true">
+-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+-            </div>
+-            <div>
+-              <span class="contact-link-label">GitHub</span>
+-              <span class="contact-link-value">github.com/jithu748</span>
+-            </div>
+-          </a>
+-        </div>
++        <a href="https://github.com/jithu748"
++           target="_blank" rel="noopener noreferrer"
++           class="ccard" id="cc-github" aria-label="GitHub profile">
++          <div class="ccard-icon" aria-hidden="true">
++            <svg viewBox="0 0 24 24" fill="currentColor">
++              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
++            </svg>
++          </div>
++          <div class="ccard-text">
++            <span class="ccard-label">GitHub</span>
++            <span class="ccard-val">github.com/jithu748</span>
++          </div>
++          <svg class="ccard-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
++               stroke="currentColor" stroke-width="2" aria-hidden="true">
++            <path d="M5 12h14M12 5l7 7-7 7"/>
++          </svg>
++        </a>
+       </div>
+ 
+-      <form class="contact-form reveal" id="contact-form" aria-label="Contact form" onsubmit="handleFormSubmit(event)">
+-        <div class="form-group">
+-          <label for="contact-name">Full Name</label>
+-          <input type="text" id="contact-name" name="name" placeholder="Your Name" required autocomplete="name" />
+-        </div>
+-        <div class="form-group">
+-          <label for="contact-email-input">Email Address</label>
+-          <input type="email" id="contact-email-input" name="email" placeholder="your@email.com" required autocomplete="email" />
+-        </div>
+-        <div class="form-group">
+-          <label for="contact-subject">Subject</label>
+-          <input type="text" id="contact-subject" name="subject" placeholder="Internship Opportunity / Collaboration / Other" required />
++      <form class="contact-form reveal" id="contact-form" novalidate
++            onsubmit="submitForm(event)">
++        <div class="form-row-2">
++          <div class="field">
++            <label for="f-name">Name</label>
++            <input type="text" id="f-name" name="name"
++                   placeholder="Your name" required autocomplete="name" />
++          </div>
++          <div class="field">
++            <label for="f-email">Email</label>
++            <input type="email" id="f-email" name="email"
++                   placeholder="your@email.com" required autocomplete="email" />
++          </div>
+         </div>
+-        <div class="form-group">
+-          <label for="contact-message">Message</label>
+-          <textarea id="contact-message" name="message" placeholder="Tell me about the opportunity, project, or just say hello..." rows="5" required></textarea>
++        <div class="field">
++          <label for="f-msg">Message</label>
++          <textarea id="f-msg" name="message" rows="5"
++                    placeholder="What's on your mind?" required></textarea>
+         </div>
+-        <button type="submit" class="btn btn-primary btn-full" id="contact-submit-btn">
+-          Send Message
+-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
++        <button type="submit" class="btn-solid btn-block" id="f-submit">
++          Send message
++          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
++               stroke="currentColor" stroke-width="2.5" aria-hidden="true">
++            <line x1="22" y1="2" x2="11" y2="13"/>
++            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
++          </svg>
+         </button>
+-        <p class="form-note" id="form-success-msg" role="status" aria-live="polite" hidden>✅ Message sent! I'll get back to you soon.</p>
++        <p class="form-msg" id="form-msg" role="status" aria-live="polite" hidden></p>
+       </form>
++
+     </div>
+-  </section>
++  </div>
++</section>
+ 
+-  <!-- ========== FOOTER ========== -->
+-  <footer role="contentinfo">
+-    <div class="footer-inner">
+-      <div class="footer-logo">
+-        <span class="logo-bracket">&lt;</span>JB<span class="logo-bracket">/&gt;</span>
+-      </div>
+-      <nav class="footer-nav" aria-label="Footer navigation">
+-        <a href="#about">About</a>
+-        <a href="#skills">Skills</a>
+-        <a href="#experience">Experience</a>
+-        <a href="#projects">Projects</a>
+-        <a href="#contact">Contact</a>
+-      </nav>
+-      <p class="footer-copy">© 2026 Jitendra Babu. Built with passion &amp; late nights.</p>
++<!-- =========================================================
++     FOOTER
++========================================================= -->
++<footer role="contentinfo">
++  <div class="footer-wrap">
++    <div class="footer-left">
++      <span class="footer-name">Jitendra Babu</span>
++      <span class="footer-sub">B.Tech CSE (AI &amp; ML) · 2023–2027</span>
+     </div>
+-  </footer>
++    <nav class="footer-nav" aria-label="Footer navigation">
++      <a href="#about">About</a>
++      <a href="#skills">Skills</a>
++      <a href="#experience">Experience</a>
++      <a href="#projects">Projects</a>
++      <a href="#contact">Contact</a>
++    </nav>
++    <p class="footer-cr">© 2026 Jitendra Babu</p>
++  </div>
++</footer>
+ 
+-  <script src="script.js"></script>
++<script src="script.js"></script>
+ </body>
+ </html>
+\ No newline at end of file

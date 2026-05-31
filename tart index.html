@@ -1,0 +1,120 @@
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 021c1b7..422685e 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -1,509 +1,776 @@[m
+ <!DOCTYPE html>[m
+ <html lang="en">[m
+[31m-[m
+ <head>[m
+   <meta charset="UTF-8" />[m
+[31m-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />[m
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />[m
+[31m-  <title>Jitendra Babu | Software Developer & AI/ML Engineer</title>[m
+[31m-  <meta name="description" content="Jitendra Babu — Final-year B.Tech CSE (AI & ML) student and aspiring software developer. Explore projects in AI, web development, and data analytics." />[m
+[31m-  <meta name="keywords" content="Jitendra Babu, Software Developer, AI ML Engineer, Web Developer, Python, JavaScript, Portfolio, Power BI, Data Analytics" />[m
+[32m+[m[32m  <title>Jitendra Babu — B.Tech CSE (AI & ML)</title>[m
+[32m+[m[32m  <meta name="description" content="Mudde Jitendra Babu — B.Tech CSE (AI & ML) student at batch 2023–2027. Built data analysis projects on IPL, retail, and airline datasets. Completed internship at Labmentix." />[m
+   <meta name="author" content="Jitendra Babu" />[m
+[31m-  <meta property="og:title" content="Jitendra Babu | Software Developer & AI/ML Engineer" />[m
+[31m-  <meta property="og:description" content="Portfolio of Jitendra Babu — AI/ML Engineer, Web Developer, and Data Analytics enthusiast." />[m
+[32m+[m[32m  <meta property="og:title" content="Mudde Jitendra Babu — CSE Student & Developer" />[m
+[32m+[m[32m  <meta property="og:description" content="B.Tech CSE (AI & ML) student. Projects in data analysis, Python automation, and ML. Labmentix intern." />[m
+   <meta property="og:image" content="./assets/profile-pic.png" />[m
+[31m-  <meta property="og:type" content="website" />[m
+   <link rel="stylesheet" href="style.css" />[m
+   <link rel="stylesheet" href="mediaqueries.css" />[m
+   <link rel="preconnect" href="https://fonts.googleapis.com" />[m
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />[m
+[31m-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />[m
+[32m+[m[32m  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cal+Sans&display=swap" rel="stylesheet" />[m
+[32m+[m[32m  <!-- Cal Sans fallback if not available -->[m
+[32m+[m[32m  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />[m
+ </head>[m
+[31m-[m
+ <body>[m
+ [m
+[31m-  <!-- ========== NAVIGATION ========== -->[m
+[31m-  <nav id="main-nav" role="navigation" aria-label="Main navigation">[m
+[31m-    <div class="nav-inner">[m
+[31m-      <a href="#hero" class="nav-logo" id="nav-logo-link" aria-label="Home">[m
+[31m-        <span class="logo-bracket">&lt;</span>JB<span class="logo-bracket">/&gt;</span>[m
+[31m-      </a>[m
+[31m-      <ul class="nav-links" id="nav-links-list" role="list">[m
+[31m-        <li><a href="#about" id="nav-about">About</a></li>[m
+[31m-        <li><a href="#skills" id="nav-skills">Skills</a></li>[m
+[31m-        <li><a href="#experience" id="nav-experience">Experience</a></li>[m
+[31m-        <li><a href="#projects" id="nav-projects">Projects</a></li>[m
+[31m-        <li><a href="#contact" id="nav-contact">Contact</a></li>[m
+[31m-      </ul>[m
+[31m-      <a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume-btn" id="nav-resume-btn" aria-label="Download Resume">Resume ↗</a>[m
+[31m-      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMobileMenu()">[m
+[31m-        <span></span>[m
+[31m-        <span></span>[m
+[31m-        <span></span>[m
+[31m-      </button>[m
+[31m-    </div>[m
+[31m-    <!-- Mobile Menu -->[m
+[31m-    <div class="mobile-menu" id="mobile-menu" role="menu" aria-hidden="true">[m
+[31m-      <ul role="list">[m
+[31m-        <li><a href="#about" onclick="toggleMobileMenu()" role="menuitem">About</a></li>[m
+[31m-        <li><a href="#skills" onclick="toggleMobileMenu()" role="menuitem">Skills</a></li>[m
+[31m-        <li><a href="#experience" onclick="toggleMobileMenu()" role="menuitem">Experience</a></li>[m
+[31m-        <li><a href="#projects" onclick="toggleMobileMenu()" role="menuitem">Projects</a></li>[m
+[31m-        <li><a href="#contact" onclick="toggleMobileMenu()" role="menuitem">Contact</a></li>[m
+[31m-        <li><a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer" role="menuitem">Download Resume</a></li>[m
+[31m-      </ul>[m
+[31m-    </div>[m
+[31m-  </nav>[m
+[31m-[m
+[31m-  <!-- ========== HERO SECTION ========== -->[m
+[31m-  <section id="hero" aria-label="Introduction">[m
+[31m-    <div class="hero-bg-glow" aria-hidden="true"></div>[m
+[31m-    <div class="hero-particles" aria-hidden="true" id="hero-particles"></div>[m
+[31m-    <div class="hero-content">[m
+[31m-      <div class="hero-badge" id="hero-badge">[m
+[31m-        <span class="badge-dot"></span>[m
+[31m-        Available for Opportunities[m
+[31m-      </div>[m
+[31m-      <p class="hero-greeting">Hello, I'm</p>[m
+[31m-      <h1 class="hero-name" id="hero-name">Jitendra Babu</h1>[m
+[31m-      <div class="hero-tagline" aria-label="Role">[m
+[31m-        <span class="tagline-prefix">I build</span>[m
+[31m-        <span class="typed-text" id="typed-text" aria-live="polite"></span>[m
+[31m-        <span class="typed-cursor" aria-hidden="true">|</span>[m
+[32m+[m[32m<!-- =========================================================[m
+[32m+[m[32m     NAV[m
+[32m+[m[32m========================================================= -->[m
+[32m+[m[32m<nav id="nav" role="navigation" aria-label="Site navigation">[m
+[32m+[m[32m  <div class="nav-wrap">[m
+[32m+[m[32m    <a href="#top" class="nav-brand" aria-label="Jitendra Babu — home">[m
+[32m+[m[32m      Jitendra<span class="brand-dot">.</span>[m
+[32m+[m[32m    </a>[m
+[32m+[m
+[32m+[m[32m    <ul class="nav-list" role="list">[m
+[32m+[m[32m      <li><a href="#about"      class="nav-link" id="nl-about">About</a></li>[m
+[32m+[m[32m      <li><a href="#skills"     class="nav-link" id="nl-skills">Skills</a></li>[m
+[32m+[m[32m      <li><a href="#experience" class="nav-link" id="nl-exp">Experience</a></li>[m
+[32m+[m[32m      <li><a href="#projects"   class="nav-link" id="nl-proj">Projects</a></li>[m
+[32m+[m[32m      <li><a href="#contact"    class="nav-link" id="nl-contact">Contact</a></li>[m
+[32m+[m[32m    </ul>[m
+[32m+[m
+[32m+[m[32m    <a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer"[m
+[32m+[m[32m       class="nav-cta" id="nav-resume">Resume ↗</a>[m
+[32m+[m
+[32m+[m[32m    <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false"[m
+[32m+[m[32m            onclick="toggleNav()">[m
+[32m+[m[32m      <span></span><span></span><span></span>[m
+[32m+[m[32m    </button>[m
+[32m+[m[32m  </div>[m
+[32m+[m
+[32m+[m[32m  <div id="nav-drawer" class="nav-drawer" aria-hidden="true">[m
+[32m+[m[32m    <ul role="list">[m
+[32m+[m[32m      <li><a href="#about"      onclick="toggleNav()">About</a></li>[m
+[32m+[m[32m      <li><a href="#skills"     onclick="toggleNav()">Skills</a></li>[m
+[32m+[m[32m      <li><a href="#experience" onclick="toggleNav()">Experience</a></li>[m
+[32m+[m[32m      <li><a href="#projects"   onclick="toggleNav()">Projects</a></li>[m
+[32m+[m[32m      <li><a href="#contact"    onclick="toggleNav()">Contact</a></li>[m
+[32m+[m[32m      <li><a href="./assets/M.JITENDRA_RESUME.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a></li>[m
+[32m+[m[32m    </
