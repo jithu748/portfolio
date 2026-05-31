@@ -341,21 +341,53 @@ button{font-family:var(--ff-body);cursor:pointer;border:none;background:none}
   flex-shrink:0;position:relative;
   width:300px;height:300px;
   animation:up .65s ease .12s both;
+  border-radius: 50%;
+  padding: 8px;
+  background: var(--bg-card);
+  border: 1px solid rgba(124,112,232,.3);
+  box-shadow: 0 0 35px rgba(124,112,232,.15);
 }
-.photo-halo{
-  position:absolute;inset:-12px;border-radius:50%;
-  background:conic-gradient(from 180deg,var(--a),var(--a-soft),transparent 60%);
-  opacity:.5;animation:spin 12s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 .photo-img{
   position:relative;width:100%;height:100%;
   object-fit:cover;border-radius:50%;
-  border:2px solid var(--bg);
-  box-shadow:0 0 36px rgba(124,112,232,.18);
-  transition:transform var(--ts);
 }
-.hero-photo:hover .photo-img{transform:scale(1.03)}
+
+/* ─────────────────────────────────────────────
+   QUICK STATS
+───────────────────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: -30px;
+}
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--b1);
+  border-radius: var(--rl);
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform var(--tf), border-color var(--tf);
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--b2);
+}
+.stat-number {
+  font-family: var(--ff-head);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--t1);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-family: var(--ff-mono);
+  font-size: 0.78rem;
+  color: var(--a-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
 /* ─────────────────────────────────────────────
    ABOUT

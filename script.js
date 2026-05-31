@@ -4,11 +4,10 @@
    TYPED — Real, honest phrases only
 ───────────────────────────────────────────── */
 const PHRASES = [
-  "Python developer",
-  "data analysis & ML",
-  "B.Tech CSE · 2023–2027",
-  "Labmentix intern",
-  "building with data",
+  "Data Analytics Intern",
+  "Python Developer",
+  "Power BI Developer",
+  "AI & ML Student"
 ];
 
 let pIdx = 0, cIdx = 0, del = false;
@@ -270,25 +269,6 @@ const PROJECTS_LIST = [
     demo: "https://resume-screening-14.onrender.com"
   },
   {
-    id: "ipl",
-    title: "IPL Data Analysis Project",
-    blurb: "Explored multi-season IPL match & delivery data to find which teams and players perform consistently.",
-    image: "./assets/project-ipl.png",
-    whyBuilt: "I'm a huge cricket fan and wanted to see if the data matched my intuition about which players are actually clutch under pressure, rather than just looking at total runs.",
-    problemSolved: "Raw IPL CSV data is massive. It tells you what happened every ball, but gives no picture of performance trends. I cleaned and merged these datasets to compute win rates, strike rates, and bowling economies.",
-    biggestChallenge: "Writing efficient pandas groupby aggregations. Doing this inefficiently crashed my Jupyter notebook early on.",
-    learnings: "The hardest part of data analysis isn't writing the code — it's deciding which question to ask. A clean chart title matters more than a complex chart type.",
-    features: [
-      "Top 10 run scorers ranked by total runs (horizontal bar chart)",
-      "Team win distribution across all IPL seasons",
-      "Toss decision vs match result correlation heatmap",
-      "Season-by-season performance comparison",
-      "Bowling economy and wicket analysis by player"
-    ],
-    tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
-    github: "https://github.com/jithu748"
-  },
-  {
     id: "retail",
     title: "Retail Analytics Dashboard",
     blurb: "Cleaned and visualized a retail sales dataset to show monthly trends, top categories, and regional breakdowns in a multi-panel dashboard.",
@@ -305,6 +285,25 @@ const PROJECTS_LIST = [
       "Year-over-year comparison panel"
     ],
     tools: ["Python", "Pandas", "Power BI", "Excel", "Matplotlib"],
+    github: "https://github.com/jithu748"
+  },
+  {
+    id: "ipl",
+    title: "IPL Data Analysis Project",
+    blurb: "Explored multi-season IPL match & delivery data to find which teams and players perform consistently.",
+    image: "./assets/project-ipl.png",
+    whyBuilt: "I'm a huge cricket fan and wanted to see if the data matched my intuition about which players are actually clutch under pressure, rather than just looking at total runs.",
+    problemSolved: "Raw IPL CSV data is massive. It tells you what happened every ball, but gives no picture of performance trends. I cleaned and merged these datasets to compute win rates, strike rates, and bowling economies.",
+    biggestChallenge: "Writing efficient pandas groupby aggregations. Doing this inefficiently crashed my Jupyter notebook early on.",
+    learnings: "The hardest part of data analysis isn't writing the code — it's deciding which question to ask. A clean chart title matters more than a complex chart type.",
+    features: [
+      "Top 10 run scorers ranked by total runs (horizontal bar chart)",
+      "Team win distribution across all IPL seasons",
+      "Toss decision vs match result correlation heatmap",
+      "Season-by-season performance comparison",
+      "Bowling economy and wicket analysis by player"
+    ],
+    tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
     github: "https://github.com/jithu748"
   },
   {
